@@ -1,6 +1,6 @@
 const quizData = [
     {
-        question : "Part Technical Test: 1.What does HTML stand for?",
+        question : " 1.What does HTML stand for?",
         a:"Hyper Text Preprocessor",
         b:"Hyper Text Markup Language",
         c:"Hyper Text Multiple Language",
@@ -80,7 +80,7 @@ const quizData = [
         correct:"b",
     },
     {
-        question : "Part English Test: 1-I prefer coffee _____ tea.",
+        question : "1-I prefer coffee _____ tea.",
         a:"to",
         b:"than",
         c:"like",
@@ -120,7 +120,7 @@ const quizData = [
         correct:"a",
     },
     {
-        question : "Part IQ Test: 1-Which number logically follows this series? (4 6 9 6 14 6 ...)",
+        question : "1-Which number logically follows this series? (4 6 9 6 14 6 ...)",
         a:"6",
         b:"17",
         c:"19",
@@ -167,7 +167,7 @@ const a_text = document.getElementById('a_text');
 const b_text = document.getElementById('b_text');
 const c_text = document.getElementById('c_text');
 const d_text = document.getElementById('d_text');
-const submitBtn =document.getElementById('submit');
+const nextBtn =document.getElementById('submit');
 
 let currentQuiz =0;
 let score =0;
@@ -194,27 +194,47 @@ function getSelected(){
     let answer;
     answerEl.forEach(answerEl => {
         if (answerEl.checked){
-            answer = answerEl.id;
+            answer = answerEl.value;
         }
     })
     return answer;
 }
-submitBtn.addEventListener('click' , ()=>{
+nextBtn.addEventListener('click' , ()=>{
     const answer =getSelected();
     if(answer){
         if (answer === quizData[currentQuiz].correct) {
             score++;
         }
+
+        let y = 0;
+        let x = quizData[y].question;
+        quizData.forEach( item => localStorage.setItem(quizData[currentQuiz].question,quizData[currentQuiz].correct) );
+        quizData.forEach( item => localStorage.setItem('your answer',answer));
+        
         currentQuiz++;
+        
 
         if (currentQuiz < quizData.length) {
+
+            if (currentQuiz == 10){
+                document.getElementById('title').innerHTML='<h2 style =" font-weight: 900; font-size: xx-large; ">English Test :</h2>  <img src="eng.jpg" width="150px" height="100px">';
+            }
+           
+            if (currentQuiz == 15){
+                document.getElementById('title').innerHTML='<h2 style =" font-weight: 900; font-size: xx-large; ">IQ Test :</h2>  <img src="IQ.jpg" width="150px" height="100px">';
+            }
+
+
             loadQuiz();
         } else {
             quiz.innerHTML = `
             <h2>You answerd ${score}/${quizData.length} questions correctly</h2>
-            
+            <button onclick="">Result</button>
             `
             
         }
     }
 })
+
+localStorage.clear();
+
