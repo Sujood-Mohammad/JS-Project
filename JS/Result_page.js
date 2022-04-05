@@ -13,7 +13,7 @@ else {
     let p = document.getElementById("pass");
     let btn = document.getElementById("ans_btn");
     let ans = document.getElementById("ans_table");
-    document.getElementById("result").innerHTML = " Result <br><br>" + "<span>" + result + " out of  20 " + "</span>"
+    document.getElementById("result").innerHTML = " Result : " + "<span>" + result + " / 20 " + "</span>"
 
     if (result >= 10) {
         p.style.display = "inline";
@@ -71,22 +71,22 @@ else {
                 if (a2[i].correct == "a") {
                     a1[i].style.backgroundColor = "#43d843"
                     a1[i].style.color = "white"
-                    a1[i].innerHTML += "  correct anwser "
+                  //  a1[i].innerHTML += "  correct anwser "
                 }
                 if (a2[i].correct == "b") {
                     b1[i].style.backgroundColor = "#43d843"
                     b1[i].style.color = "white"
-                    b1[i].innerHTML += "  correct anwser "
+                  //  b1[i].innerHTML += "  correct anwser "
                 }
                 if (a2[i].correct == "c") {
                     c1[i].style.backgroundColor = "#43d843"
                     c1[i].style.color = "white"
-                    c1[i].innerHTML += "  correct anwser "
+                  //  c1[i].innerHTML += "  correct anwser "
                 }
                 if (a2[i].correct == "d") {
                     d1[i].style.backgroundColor = "#43d843"
                     d1[i].style.color = "white"
-                    d1[i].innerHTML += "  correct anwser "
+                  //  d1[i].innerHTML += "  correct anwser "
                 }
             }
         }
@@ -100,7 +100,7 @@ else {
         if (id) {
 
             localStorage.removeItem("user_id")
-            location.href = "login.html"
+            location.href = "../Index.html"
 
         }
         else {
