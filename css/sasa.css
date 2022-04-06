@@ -92,3 +92,28 @@ ul li :hover{
 }
 
 }
+
+/* this new Style */
+#letGo{
+    width: 600px;
+    height: 500px;
+    padding: 35px;
+    box-shadow: 0 0 4px 4px coral;
+    background-image: url(../img/book.gif);
+    background-size: 600px 500px;
+    border-radius: 60px;
+}
+#finish{
+    padding-bottom: 30px;
+    padding-top: 77px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    font-style: italic;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+}
+#st{
+    margin: 100px auto;
+    border-radius: 20px;
+}
